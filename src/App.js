@@ -9,6 +9,7 @@ import OrderScreen from './screens/OrderScreen';
 import PaymentMethodScreen from './screens/PaymentMethodScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import ProductScreen from './screens/ProductScreen';
+import ProfileScreen from './screens/ProfileScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import SigninScreen from './screens/SigininScreen';
@@ -42,6 +43,9 @@ function App() {
 								</Link>
 								<ul className="dropdown-content">
 									<li>
+										<Link to="/profile">User Profile</Link>
+									</li>
+									<li>
 										<Link to="/orderhistory">Order History</Link>
 									</li>
 									<li>
@@ -66,6 +70,7 @@ function App() {
 					<Route path="/placeorder" component={PlaceOrderScreen} />
 					<Route path="/order/:id" component={OrderScreen} />
 					<Route path="/orderhistory" component={OrderHistoryScreen} />
+					<Route path="/profile" component={ProfileScreen} />
 					<Route path="/" component={HomeScreen} exact />
 				</main>
 				<footer className="row center">Powered and designed by Victor Park </footer>
