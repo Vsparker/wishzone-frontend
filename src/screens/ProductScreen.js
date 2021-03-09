@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Rating from '../components/rating';
-import LoadingBox from '../components/loadingBox';
-import MessageBox from '../components/messageBox';
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
 import { useDispatch, useSelector } from 'react-redux';
 import { detailsProduct } from '../actions/productActions';
 
