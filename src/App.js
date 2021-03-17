@@ -4,6 +4,7 @@ import { BrowserRouter, Link, Route } from 'react-router-dom';
 import { signout } from './actions/userActions';
 import AdminRoute from './components/AdminRoute';
 import PrivateRoute from './components/PrivateRoute';
+import AboutUsScreen from './screens/AboutUsScreen';
 import CartScreen from './screens/CartScreen';
 import HomeScreen from './screens/HomeScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
@@ -19,6 +20,7 @@ import RegisterScreen from './screens/RegisterScreen';
 import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import SigninScreen from './screens/SigininScreen';
 function App() {
+	
 	const cart = useSelector((state) => state.cart);
 	const { cartItems } = cart;
 	const userSignin = useSelector((state) => state.userSignin);
@@ -37,6 +39,9 @@ function App() {
 						</Link>
 					</div>
 					<div>
+						<Link to ="/about">
+							About Us
+							</Link>
 						<Link to="/cart">
 							Cart
 							{cartItems.length > 0 && <span className="badge">{cartItems.length}</span>}
@@ -88,6 +93,7 @@ function App() {
 					</div>
 				</header>
 				<main>
+					<Route path="/about" component={AboutUsScreen} />
 					<Route path="/cart/:id?" component={CartScreen} />
 					<Route path="/product/:id" component={ProductScreen} exact />
 					<Route path="/product/:id/edit" component={ProductEditScreen} exact />
